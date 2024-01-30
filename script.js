@@ -8,7 +8,7 @@ function getComputerChoice (){
         return computerPlay[random];
 }
 
-let  playerSelection = 'rock'
+let  playerSelection =  prompt( 'Enter Play');
 playerScore = 0;
 computerScore = 0;
 
@@ -28,7 +28,7 @@ function playRound(playerSelection, computerSelection) {
     return " Its a tie"
    }//
    else if ( playerSelection.toLowerCase() == 'paper' && computerSelection == 'rock') {
-    playerSelection += 1
+    playerScore += 1
     return " You Win! Paper beats Rock"
    }
    else if ( playerSelection.toLowerCase() == 'paper' && computerSelection == 'paper'){
@@ -53,13 +53,19 @@ function playRound(playerSelection, computerSelection) {
 
 
 function playGame() {
-    for (let i = 0; i < 5;i++ ){
-       let computerSelection = getComputerChoice();
-      
+    let i = 0;
+    while(i <= 4) {
+        let computerSelection = getComputerChoice();
+       let  playerSelection =  prompt( 'Enter Play');
+       console.log(playerSelection);
+       console.log(computerSelection);
        console.log(playRound(playerSelection, computerSelection))
        console.log(` player: ${ playerScore} pc: ${ computerScore}`)
        console.log( ' ')
-    }
+       i++;
+}
+       
+    
     if ( playerScore > computerScore){
         console.log(`You win with ${playerScore} points`)
     }else {
