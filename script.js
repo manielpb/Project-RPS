@@ -25,6 +25,8 @@ function playRound(playerSelection, computerSelection) {
     return " You Lose! Paper beats Rock "
    }
    else if ( playerSelection.toLowerCase() == 'rock' && computerSelection == 'rock') {
+    playerScore = playerScore ;
+    computerScore = computerScore;
     return " Its a tie"
    }//
    else if ( playerSelection.toLowerCase() == 'paper' && computerSelection == 'rock') {
@@ -32,6 +34,8 @@ function playRound(playerSelection, computerSelection) {
     return " You Win! Paper beats Rock"
    }
    else if ( playerSelection.toLowerCase() == 'paper' && computerSelection == 'paper'){
+    playerScore = playerScore ;
+    computerScore = computerScore;
     return " Its a tie"
    }
    else if ( playerSelection.toLowerCase() == 'paper' && computerSelection == 'scissors') {
@@ -47,6 +51,8 @@ function playRound(playerSelection, computerSelection) {
     return " You Win! Scissors beats Paper"
    }
    else if ( playerSelection.toLowerCase() == 'scissors' && computerSelection == 'scissors'){
+    playerScore = playerScore ;
+    computerScore = computerScore;
     return " Its a tie"
    }
 }
