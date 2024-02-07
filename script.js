@@ -58,9 +58,11 @@ function playRound(playerSelection, computerSelection) {
 }
 
 
-function playGame() {
+/* function playGame() {
 
-    let i = 0;
+    
+
+   /* let i = 0;
     while(i < 5){
         let computerSelection = getComputerChoice();
         let  playerSelection =  prompt("Pick: Rock, Paper or Scissors");
@@ -73,10 +75,10 @@ function playGame() {
        console.log(` player: ${ playerScore} pc: ${ computerScore}`)
        console.log( ' ')
        i++;
-}
+    }*/
        
     
-    if ( playerScore > computerScore){
+   /* if ( playerScore > computerScore){
         console.log(`You win with ${playerScore} points`)
     }else {
         console.log(`Computer wins with ${ computerScore} points`)
@@ -85,8 +87,25 @@ function playGame() {
    
     
   
-}
+} */ 
 
 
 
-playGame()
+/*playGame()*/
+
+
+let rockBtn = document.getElementById('rockBtn');
+let scissorBtn = document.getElementById('scissorsBtn');
+let paperBtn = document.getElementById( 'paperBtn');
+
+rockBtn.addEventListener( 'click', () => {
+    console.log('player chose rock')
+});
+
+scissorsBtn.addEventListener('click', ()=>{
+    console.log('player chose scissor')
+});
+
+paperBtn.addEventListener('click', ()=>{
+    console.log('player chose paper')
+})
