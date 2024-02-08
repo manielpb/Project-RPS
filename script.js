@@ -1,13 +1,9 @@
 let computerPlay = [ 'rock', 'paper', 'scissors'];
 
-
-
-
 function getComputerChoice (){
         let random = Math.floor(Math.random()* computerPlay.length);
         return computerPlay[random];
 }
-
 
 playerScore = 0;
 computerScore = 0;
@@ -64,8 +60,7 @@ function playRound(playerSelection, computerSelection) {
 
    /* let i = 0;
     while(i < 5){
-        let computerSelection = getComputerChoice();
-        let  playerSelection =  prompt("Pick: Rock, Paper or Scissors");
+       
         if( playerSelection != 'rock' && playerSelection != 'paper' & playerSelection != 'scissors'){
             playerSelection = prompt("invalid input, Pick Rock, or Paper, or Scissors")
         }
@@ -93,19 +88,75 @@ function playRound(playerSelection, computerSelection) {
 
 /*playGame()*/
 
-
 let rockBtn = document.getElementById('rockBtn');
 let scissorBtn = document.getElementById('scissorsBtn');
 let paperBtn = document.getElementById( 'paperBtn');
 
 rockBtn.addEventListener( 'click', () => {
-    console.log('player chose rock')
+
+    computerSelection = getComputerChoice();
+    playerSelection = 'Rock'
+    console.log(playRound(playerSelection,computerSelection));
+    console.log(`player: ${playerScore} || computer: ${computerScore}`);
+    if ( playerScore === 5) {
+        console.log('You win stop Playing')
+    }
+    else if ( computerScore === 5){
+        console.log('computer wins , you loser')
+    }
+    playerSelect.appendChild(rockOpt)
+  
 });
 
 scissorsBtn.addEventListener('click', ()=>{
-    console.log('player chose scissor')
+    computerSelection = getComputerChoice();
+    playerSelection = 'Scissors';
+    console.log(playRound(playerSelection, computerSelection));
+    console.log(`player: ${playerScore} || computer: ${computerScore}`);
+    if ( playerScore === 5) {
+        console.log('You win stop Playing')
+    }
+    else if ( computerScore === 5){
+        console.log('computer wins , you loser')
+    }
+   playerSelect.appendChild(scissorOpt)
 });
 
 paperBtn.addEventListener('click', ()=>{
-    console.log('player chose paper')
+    computerSelection = getComputerChoice();
+    playerSelection = 'Paper';
+    console.log(playRound(playerSelection, computerSelection));
+    console.log(`player: ${playerScore} || computer: ${computerScore}`);
+    if ( playerScore === 5) {
+        console.log('You win stop Playing')
+    }
+    else if ( computerScore === 5){
+        console.log('computer wins , you loser')
+    }
+   playerSelect.appendChild(paperOpt)
 })
+
+
+
+let rockOpt = document.createElement('h3');
+let rockOptText = document.createTextNode('you chose rock');
+rockOpt.appendChild(rockOptText)
+console.log(rockOpt);
+
+
+let paperOpt = document.createElement('h3');
+let paperOptText = document.createTextNode('you chose paper');
+paperOpt.appendChild(paperOptText)
+console.log(paperOpt)
+
+let scissorOpt = document.createElement('h3');
+let scissorOptText = document.createTextNode('you chose scissor');
+scissorOpt.appendChild(scissorOptText)
+console.log(scissorOpt)
+
+
+
+
+
+
+
