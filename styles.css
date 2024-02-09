@@ -1,0 +1,57 @@
+* {
+    padding: 0;
+    margin: 0;
+
+}
+
+/*background: url(images/IMG_8326.JPG) no-repeat center center/cover;*/
+
+body {
+    background: url(images/itachi.JPG) no-repeat center center/cover;
+}
+
+#container {
+    display: flex;
+    justify-content: center;
+   /* align-items: center;*/
+   align-content: center;
+   margin:250px auto;
+    flex-direction: column;
+    background-color: brown;
+    width: 400px;
+
+}
+
+button img {
+    width: 150px;
+    height: 90px;
+}
+
+button {
+    border-radius: 50px;
+    height: 100px;
+    background-color: rgb(237, 237, 34);
+}
+
+#rockBtn, #scissorsBtn, #paperBtn {
+    margin: 20px 20px;
+    border: 5px solid black;
+   
+    font-size: 30px;
+}
+
+
+
+#playerSelect, #result, #computerSelects, #gameplay, #status1 {
+    margin: 20px 20px;
+    text-align: center;
+    font-size: 25px;
+    border-radius: 20px;
+}
+
+#gameplay {
+    font-size: 30px;
+    font-weight: 100s;
+    margin: 5px;
+   
+
