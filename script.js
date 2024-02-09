@@ -91,49 +91,79 @@ function playRound(playerSelection, computerSelection) {
 let rockBtn = document.getElementById('rockBtn');
 let scissorBtn = document.getElementById('scissorsBtn');
 let paperBtn = document.getElementById( 'paperBtn');
+let playerSelect = document.getElementById('playerSelect');
+let computerSelect = document.getElementById('computerSelects');
+let status = document.getElementById('status');
+let result = document.getElementById('result');
+let gameplay = document.getElementById('gameplay');
+let gameplayResult = document.createElement('h5');
+let gameplayResultText = document.createTextNode(`player: ${playerScore} || computer: ${computerScore}`);
+gameplayResult.appendChild(gameplayResultText);
+
+
+
+
+
+let announcePlayerWinOpt = document.createElement('h1');
+let announcePlayerWinText = document.createTextNode("You win,get the fuck outta here");
+announcePlayerWinOpt.appendChild(announcePlayerWinText);
+let announcePcWinOpt = document.createElement('h1');
+let announcePcWinText = document.createTextNode("Computer win, you LOSER");
+announcePcWinOpt.appendChild(announcePcWinText);
+
 
 rockBtn.addEventListener( 'click', () => {
 
     computerSelection = getComputerChoice();
-    playerSelection = 'Rock'
-    console.log(playRound(playerSelection,computerSelection));
-    console.log(`player: ${playerScore} || computer: ${computerScore}`);
+    playerSelection = 'Rock';
+    computerSelect.innerHTML = ` computer chose ${computerSelection}`;
+    playerSelect.innerHTML = `player chose ${ playerSelection}`;
+    status.innerHTML = playRound(playerSelection,computerSelection);
+   
+    gameplay.innerHTML = `player: ${playerScore} || computer: ${computerScore} `;
     if ( playerScore === 5) {
-        console.log('You win stop Playing')
+        result.appendChild(announcePlayerWinOpt)
     }
     else if ( computerScore === 5){
-        console.log('computer wins , you loser')
+        result.appendChild(announcePcWinOpt);
     }
-    playerSelect.appendChild(rockOpt)
+   // playerSelect.appendChild(rockOpt)
   
 });
 
-scissorsBtn.addEventListener('click', ()=>{
+scissorBtn.addEventListener('click', ()=>{
     computerSelection = getComputerChoice();
     playerSelection = 'Scissors';
+    computerSelect.innerHTML = `computer chose ${computerSelection}`;
+    playerSelect.innerHTML = `player chose ${ playerSelection}`;
+
     console.log(playRound(playerSelection, computerSelection));
-    console.log(`player: ${playerScore} || computer: ${computerScore}`);
+    
+    gameplay.innerHTML = `player: ${playerScore} || computer: ${computerScore} `;
     if ( playerScore === 5) {
-        console.log('You win stop Playing')
+       result.appendChild(announcePlayerWinOpt)
     }
     else if ( computerScore === 5){
-        console.log('computer wins , you loser')
+        result.appendChild(announcePcWinOpt)
     }
-   playerSelect.appendChild(scissorOpt)
+  // playerSelect.appendChild(scissorOpt)
 });
 
 paperBtn.addEventListener('click', ()=>{
     computerSelection = getComputerChoice();
     playerSelection = 'Paper';
+    computerSelect.innerHTML = `computer chose ${computerSelection}`;
+    playerSelect.innerHTML = ` player chose ${ playerSelection};`
     console.log(playRound(playerSelection, computerSelection));
-    console.log(`player: ${playerScore} || computer: ${computerScore}`);
+   
+    gameplay.innerHTML = `player: ${playerScore} || computer: ${computerScore} `;
     if ( playerScore === 5) {
-        console.log('You win stop Playing')
+       result.appendChild(announcePlayerWinOpt)
     }
     else if ( computerScore === 5){
-        console.log('computer wins , you loser')
+        result.appendChild(announcePcWinOpt)
     }
-   playerSelect.appendChild(paperOpt)
+  // playerSelect.appendChild(paperOpt)
 })
 
 
@@ -141,18 +171,17 @@ paperBtn.addEventListener('click', ()=>{
 let rockOpt = document.createElement('h3');
 let rockOptText = document.createTextNode('you chose rock');
 rockOpt.appendChild(rockOptText)
-console.log(rockOpt);
 
 
 let paperOpt = document.createElement('h3');
 let paperOptText = document.createTextNode('you chose paper');
 paperOpt.appendChild(paperOptText)
-console.log(paperOpt)
+
 
 let scissorOpt = document.createElement('h3');
 let scissorOptText = document.createTextNode('you chose scissor');
 scissorOpt.appendChild(scissorOptText)
-console.log(scissorOpt)
+
 
 
 
